@@ -64,7 +64,7 @@ public class Main {
         System.out.println(str.replace(" ",""));
         System.out.println("Проверить, пустая ли строка");
 
-        if (str == null && str.equals("") ){
+        if (str == null && str.isEmpty() ){
             System.out.println("строка пустая");
         } else {
             System.out.println("строка не пустая");
@@ -88,16 +88,11 @@ public class Main {
         Scanner line = new Scanner(System.in);
 
 
-       String str_1 = line.nextLine();
-       String str_1_1 = line.nextLine();
-        String str_1_2 = line.nextLine();
+
 
 
         ShortLong shortLong = new ShortLong();
-
         shortLong.SchortLong();
-        System.out.println("------------");
-        shortLong.differentSymbols();
-      //  System.out.println(shortLong.s);
+
     }
 }

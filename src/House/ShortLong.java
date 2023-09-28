@@ -1,56 +1,61 @@
 package House;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Comparator;
 
 public class ShortLong {
-    public String str_1 = "sdfghj";
-    public String str_2 ="ggggggg";
-    public String str_3 = "errr rsy yyy iii";
+    Scanner line = new Scanner(System.in);
+    String str_1 = line.nextLine();
+    String str_1_1 = line.nextLine();
+    String str_1_2 = line.nextLine();
 
 
-    String strItog = str_1 + " " + str_2 + " " + str_3;
+    String strItog = str_1 + " " + str_1_1 + " " + str_1_2;
 
-    String[] mas = {this.str_1, this.str_2, this.str_3};
+    String[] strings = {str_1, str_1_1, str_1_2};
 
     public void SchortLong() {
-      //  Arrays.sort(mas);
-        System.out.println("1 строка " + mas[0] + " и ее длинна равна" + mas[0].length());
-        System.out.println("2 строка " + mas[1] + " и ее длинна равна" + mas[2].length());
-        System.out.println("3 строка " + mas[2] + " и ее длинна равна" + mas[2].length());
-        System.out.println("”пор€доченные строки");
-        System.out.println(Arrays.toString(mas));
+        Arrays.sort(strings, Comparator.comparingInt(String::length));
+
+        // ¬ыводим отсортированный массив строк
+        System.out.println("—троки в пор€дке возрастани€ их длины:");
+        for (String s : strings) {
+            System.out.println(s);
+        }
+
+        System.out.println("-------------средн€€ длинна------");
 
         int sred = 0;
-        for (int i = 0; i < mas.length; i++) {
-            sred += mas[i].length();
+        for (int i = 0; i < strings.length; i++) {
+            sred += strings[i].length();
         }
-        sred /= mas.length;
-        for (int i = 0; i < mas.length; i++) {
-            if (mas[i].length() < sred) {
-                System.out.println(mas[i] + " длинна строки равна = " + mas[i].length());
+        sred /= strings.length;
+        for (int i = 0; i < strings.length; i++) {
+            if (strings[i].length() < sred) {
+                System.out.println(strings[i] + " длинна строки равна = " + strings[i].length());
             }
         }
 
     }
 
-    public void differentSymbols() {
-        String[] strSplit = strItog.split(" ");
-        System.out.println(this.strItog);
-        System.out.println("strSplit" + Arrays.toString(strSplit));
-
-        for (int i = 0; i < strSplit.length; i++) {
-            for (int j = 0; j < strSplit[i].toCharArray().length-1; j++) {
-                if (strSplit[i].indexOf(String.valueOf(strSplit[j].toCharArray())) != -1) {
-                    System.out.println("—лово с неповтор€ющимис€ символами найдено" );
-                    // break;
-                } else {
-                    System.out.println("—лово с неповтор€ющимис€ символами  найдено " + strSplit[i]);
-                }
-
-            }
-
-
-        }
-
-    }
+//    public void differentSymbols() {
+//        String[] strSplit = strItog.split(" ");
+//        System.out.println(this.strItog);
+//        System.out.println("strSplit" + Arrays.toString(strSplit));
+//
+//        for (int i = 0; i < strSplit.length; i++) {
+//            for (int j = 0; j < strSplit[i].toCharArray().length-1; j++) {
+//                if (strSplit[i].indexOf(String.valueOf(strSplit[j].toCharArray())) != -1) {
+//                    System.out.println("—лово с неповтор€ющимис€ символами найдено" );
+//                    // break;
+//                } else {
+//                    System.out.println("—лово с неповтор€ющимис€ символами  найдено " + strSplit[i]);
+//                }
+//
+//            }
+//
+//
+//        }
+//
+//    }
 }
